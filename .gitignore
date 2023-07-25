@@ -1,0 +1,8 @@
+
+.DS_Store
+/.idea/
+/.settings/
+/src/main/java/com/solvd/carina/demo/
+/src/test/java/com/solvd/carina/demo/
+/target/
+/reports/
