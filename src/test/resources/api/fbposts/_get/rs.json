@@ -1,0 +1,25 @@
+{
+	"posts": {
+		"data": [
+			{
+				"created_time": "skip",
+				"message": "skip",
+				"id": "skip"
+			},
+			{
+				"created_time": "skip",
+				"message": "skip",
+				"id": "skip"
+			},
+			{
+				"created_time": "skip",
+				"id": "skip"
+			}
+		],
+		"paging": {
+			"previous": "skip",
+			"next": "skip"
+		}
+	},
+	"id": "skip"
+}
