@@ -14,6 +14,9 @@ public class ProductPage extends ProductPageBase {
     @FindBy(xpath = "//button[contains(@class, 'ux-call-to-action')][contains(@class, 'btn')][contains(@class, 'btn--fluid')][contains(@class, 'btn--secondary')]")
     private ExtendedWebElement addToWatchListButton;
 
+    @FindBy(xpath = "/html/body/div[4]/div[2]/div[1]/div[3]/div[2]/div/div[2]/div/div[1]/div[2]/ul/li[1]/div/a")
+    private ExtendedWebElement addToCartButton;
+
     public ProductPage(WebDriver driver) {
         super(driver);
         setUiLoadedMarker(searchBar);
@@ -22,5 +25,9 @@ public class ProductPage extends ProductPageBase {
     @Override
     public void addToWatchlist() {
         addToWatchListButton.click();
+    }
+
+    public void addToCart(){
+        addToCartButton.click();
     }
 }

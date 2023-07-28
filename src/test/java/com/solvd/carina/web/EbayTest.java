@@ -139,6 +139,8 @@ public class EbayTest implements IAbstractTest{
         ProductPageBase productPage = iPhoneSearchPage.openFirstProductPage();
         Assert.assertTrue(productPage.isPageOpened(), "Product page is not opened");
 
+        productPage.addToCart();
+
     }
 }
 
