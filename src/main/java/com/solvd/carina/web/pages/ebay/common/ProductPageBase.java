@@ -12,6 +12,7 @@ public abstract class ProductPageBase extends AbstractPage {
     }
 
     public abstract void addToWatchlist();
+    public abstract void addToCart();
 
     public void open() {
         super.open();
