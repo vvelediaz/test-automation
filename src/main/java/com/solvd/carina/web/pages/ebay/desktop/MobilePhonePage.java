@@ -1,10 +1,8 @@
-package com.solvd.carina.ebay.pages.desktop;
+package com.solvd.carina.web.pages.ebay.desktop;
 
-import com.solvd.carina.ebay.pages.common.CarAndTruckPartsPageBase;
-import com.solvd.carina.ebay.pages.common.MobilePhonePageBase;
+import com.solvd.carina.web.pages.ebay.common.MobilePhonePageBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 

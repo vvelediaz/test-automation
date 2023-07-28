@@ -1,20 +1,18 @@
-package com.solvd.carina.ebay.pages.common;
+package com.solvd.carina.web.pages.ebay.common;
 
 import com.zebrunner.carina.webdriver.decorator.PageOpeningStrategy;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
 
-public abstract class HomePageBase extends AbstractPage {
-    public HomePageBase(WebDriver driver) {
+public abstract class MessagesPageBase extends AbstractPage {
+    public MessagesPageBase(WebDriver driver) {
         super(driver);
         setPageOpeningStrategy(PageOpeningStrategy.BY_ELEMENT);
     }
 
-    public abstract CarAndTruckPartsPageBase openCarsAndTrucksPage();
+    public abstract String getFirstMessageSubject();
 
-    @Override
     public void open() {
         super.open();
     }
-
 }

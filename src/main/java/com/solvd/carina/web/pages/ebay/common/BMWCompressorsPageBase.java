@@ -1,4 +1,4 @@
-package com.solvd.carina.ebay.pages.common;
+package com.solvd.carina.web.pages.ebay.common;
 
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.decorator.PageOpeningStrategy;
@@ -7,17 +7,16 @@ import org.openqa.selenium.WebDriver;
 
 import java.util.List;
 
-public abstract class CarAndTruckPartsPageBase extends AbstractPage {
+public abstract class BMWCompressorsPageBase extends AbstractPage {
 
-    protected CarAndTruckPartsPageBase(WebDriver driver) {
+    public BMWCompressorsPageBase(WebDriver driver) {
         super(driver);
         setPageOpeningStrategy(PageOpeningStrategy.BY_ELEMENT);
     }
 
-    public abstract List<ExtendedWebElement> getCategories();
-
-    @Override
     public void open() {
         super.open();
     }
+
+    public abstract List<ExtendedWebElement> getPrices();
 }

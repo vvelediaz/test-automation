@@ -1,8 +1,6 @@
-package com.solvd.carina.ebay.pages.desktop;
+package com.solvd.carina.web.pages.ebay.desktop;
 
-import com.solvd.carina.ebay.pages.common.BMWCompressorsPageBase;
-import com.solvd.carina.ebay.pages.common.CarAndTruckPartsPageBase;
-import com.solvd.carina.ebay.pages.common.HomePageBase;
+import com.solvd.carina.web.pages.ebay.common.*;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import org.openqa.selenium.WebDriver;
@@ -12,7 +10,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.JavascriptExecutor;
 
 
 import java.time.Duration;
@@ -25,6 +22,18 @@ public class HomePage extends HomePageBase {
 
     @FindBy(xpath = "//input[@placeholder='Search for anything']")
     private ExtendedWebElement searchBar;
+
+    @FindBy(xpath = "//a[text()='Sign in']")
+    private ExtendedWebElement signInButton;
+
+    @FindBy(xpath = "//li[@class='gh-t gh-divider-l' and @id='gh-p-1']")
+    private ExtendedWebElement dailyDealsButton;
+
+    @FindBy(xpath = "//button[@id='gh-ug']")
+    private ExtendedWebElement accountDropDownMenu;
+
+    @FindBy(xpath = "//a[text()='Account settings']")
+    private ExtendedWebElement accountSettingsButton;
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -44,5 +53,23 @@ public class HomePage extends HomePageBase {
         carsAndTruckPartsButton.click();
 
         return initPage(getDriver(), CarAndTruckPartsPageBase.class);
+    }
+
+    @Override
+    public SignInPageBase openSignInPage() {
+        signInButton.click();
+        return initPage(getDriver(), SignInPageBase.class);
+    }
+
+    @Override
+    public DailyDealsPageBase openDailyDealsPage() {
+        dailyDealsButton.click();
+        return initPage(getDriver(), DailyDealsPageBase.class);
+    }
+
+    public AccountSettingsPageBase openAccountSettingsPage() {
+        accountDropDownMenu.hover();
+        accountSettingsButton.click();
+        return initPage(getDriver(), AccountSettingsPageBase.class);
     }
 }

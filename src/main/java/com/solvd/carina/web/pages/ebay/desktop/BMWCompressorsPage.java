@@ -1,6 +1,6 @@
-package com.solvd.carina.ebay.pages.desktop;
+package com.solvd.carina.web.pages.ebay.desktop;
 
-import com.solvd.carina.ebay.pages.common.BMWCompressorsPageBase;
+import com.solvd.carina.web.pages.ebay.common.BMWCompressorsPageBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import org.openqa.selenium.WebDriver;

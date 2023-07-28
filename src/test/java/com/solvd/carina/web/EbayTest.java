@@ -1,16 +1,12 @@
-package com.solvd.carina.ebay;
+package com.solvd.carina.web;
 
 import java.lang.invoke.MethodHandles;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.solvd.carina.ebay.pages.common.BMWCompressorsPageBase;
-import com.solvd.carina.ebay.pages.common.CarAndTruckPartsPageBase;
-import com.solvd.carina.ebay.pages.common.HomePageBase;
-import com.solvd.carina.ebay.pages.common.MobilePhonePageBase;
+import com.solvd.carina.web.pages.ebay.common.*;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
-import org.openqa.selenium.By;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
@@ -67,7 +63,8 @@ public class EbayTest implements IAbstractTest{
         Assert.assertEquals(prices.size(), 48, "Not all prices were acquired");
     }
 
-    @Test void printDevices(){
+    @Test
+    public void printDevices(){
         MobilePhonePageBase mobilePhonePage = initPage(getDriver(), MobilePhonePageBase.class);
         mobilePhonePage.open();
         Assert.assertTrue(mobilePhonePage.isPageOpened(), "Mobile Phone page is not opened");
@@ -82,5 +79,48 @@ public class EbayTest implements IAbstractTest{
 
         }
     }
+
+    @Test
+    public void signInAndViewSpotlightDealTest(){
+        HomePageBase homePage = initPage(getDriver(), HomePageBase.class);
+        homePage.open();
+        Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
+
+        SignInPageBase signInPage = homePage.openSignInPage();
+        Assert.assertTrue(signInPage.isPageOpened(), "Sign in page is not opened");
+
+        homePage = signInPage.signIn();
+        Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
+
+        DailyDealsPageBase dailyDealsPage = homePage.openDailyDealsPage();
+        Assert.assertTrue(dailyDealsPage.isPageOpened(), "Daily Deals page is not opened");
+
+        ProductPageBase productPage = dailyDealsPage.openProductPage();
+        Assert.assertTrue(productPage.isPageOpened(), "Product page is not opened");
+    }
+
+    @Test
+    public void signInAndViewMessages(){
+        HomePageBase homePage = initPage(getDriver(), HomePageBase.class);
+        homePage.open();
+        Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
+        homePage.openSignInPage();
+
+        SignInPageBase signInPage = initPage(getDriver(), SignInPageBase.class);
+        Assert.assertTrue(signInPage.isPageOpened(), "Sign in page is not opened");
+
+        signInPage.signIn();
+        homePage = initPage(getDriver(), HomePageBase.class);
+        Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
+
+        AccountSettingsPageBase accountSettingsPage = homePage.openAccountSettingsPage();
+        Assert.assertTrue(accountSettingsPage.isPageOpened(), "Account Settings page is not opened");
+
+        MessagesPageBase messagesPage = accountSettingsPage.openMessagesPage();
+        Assert.assertTrue(messagesPage.isPageOpened(), "Messages page is not opened");
+        Assert.assertEquals(messagesPage.getFirstMessageSubject(), "A new device is using your account", "Message subject is not correct");
+    }
+
+    
 }
 
