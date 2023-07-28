@@ -10,11 +10,17 @@ import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import com.zebrunner.carina.core.IAbstractTest;
 
-public class EbayTest implements IAbstractTest{
+public class EbayTest implements ILogin{
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
+
+    @BeforeTest
+    public void beforeTest(){
+        getDriver().get("https://www.ebay.com/");
+    }
 
     @Test
     public void getCategoriesTest() {
@@ -82,15 +88,7 @@ public class EbayTest implements IAbstractTest{
 
     @Test
     public void signInAndViewSpotlightDealTest(){
-        HomePageBase homePage = initPage(getDriver(), HomePageBase.class);
-        homePage.open();
-        Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
-
-        SignInPageBase signInPage = homePage.openSignInPage();
-        Assert.assertTrue(signInPage.isPageOpened(), "Sign in page is not opened");
-
-        homePage = signInPage.signIn();
-        Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
+        HomePageBase homePage = login();
 
         DailyDealsPageBase dailyDealsPage = homePage.openDailyDealsPage();
         Assert.assertTrue(dailyDealsPage.isPageOpened(), "Daily Deals page is not opened");
@@ -101,17 +99,7 @@ public class EbayTest implements IAbstractTest{
 
     @Test
     public void signInAndViewMessages(){
-        HomePageBase homePage = initPage(getDriver(), HomePageBase.class);
-        homePage.open();
-        Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
-        homePage.openSignInPage();
-
-        SignInPageBase signInPage = initPage(getDriver(), SignInPageBase.class);
-        Assert.assertTrue(signInPage.isPageOpened(), "Sign in page is not opened");
-
-        signInPage.signIn();
-        homePage = initPage(getDriver(), HomePageBase.class);
-        Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
+        HomePageBase homePage = login();
 
         AccountSettingsPageBase accountSettingsPage = homePage.openAccountSettingsPage();
         Assert.assertTrue(accountSettingsPage.isPageOpened(), "Account Settings page is not opened");
@@ -123,14 +111,7 @@ public class EbayTest implements IAbstractTest{
 
     @Test
     public void signAndAddIphoneToCart(){
-        HomePageBase homePage = initPage(getDriver(), HomePageBase.class);
-        homePage.open();
-        Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
-
-        SignInPageBase signInPage = homePage.openSignInPage();
-        Assert.assertTrue(signInPage.isPageOpened(), "Sign in page is not opened");
-
-        homePage = signInPage.signIn();
+        HomePageBase homePage = login();
         Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
 
         ProductSearchPageBase iPhoneSearchPage = homePage.searchProduct("iphone 14");
