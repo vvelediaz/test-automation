@@ -18,6 +18,8 @@ public abstract class HomePageBase extends AbstractPage {
 
     public abstract AccountSettingsPageBase openAccountSettingsPage();
 
+    public abstract ProductSearchPageBase searchProduct(String product);
+
     @Override
     public void open() {
         super.open();

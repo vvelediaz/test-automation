@@ -7,8 +7,8 @@ import org.openqa.selenium.WebDriver;
 
 import java.util.List;
 
-public abstract class MobilePhonePageBase extends AbstractPage {
-    public MobilePhonePageBase(WebDriver driver) {
+public abstract class ProductSearchPageBase extends AbstractPage {
+    public ProductSearchPageBase(WebDriver driver) {
         super(driver);
         setPageOpeningStrategy(PageOpeningStrategy.BY_ELEMENT);
     }
@@ -17,5 +17,7 @@ public abstract class MobilePhonePageBase extends AbstractPage {
         super.open();
     }
 
-    public abstract List<ExtendedWebElement> getPhones();
+    public abstract ProductPageBase openFirstProductPage();
+
+    public abstract List<ExtendedWebElement> getItemsPrice();
 }

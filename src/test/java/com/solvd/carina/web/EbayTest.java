@@ -65,11 +65,11 @@ public class EbayTest implements IAbstractTest{
 
     @Test
     public void printDevices(){
-        MobilePhonePageBase mobilePhonePage = initPage(getDriver(), MobilePhonePageBase.class);
+        ProductSearchPageBase mobilePhonePage = initPage(getDriver(), ProductSearchPageBase.class);
         mobilePhonePage.open();
         Assert.assertTrue(mobilePhonePage.isPageOpened(), "Mobile Phone page is not opened");
 
-        for(ExtendedWebElement element : mobilePhonePage.getPhones()){
+        for(ExtendedWebElement element : mobilePhonePage.getItemsPrice()){
             String text = element.getText();;
             try {
                 LOGGER.info(text.substring(0, text.indexOf("\n")));
@@ -121,6 +121,24 @@ public class EbayTest implements IAbstractTest{
         Assert.assertEquals(messagesPage.getFirstMessageSubject(), "A new device is using your account", "Message subject is not correct");
     }
 
-    
+    @Test
+    public void signAndAddIphoneToCart(){
+        HomePageBase homePage = initPage(getDriver(), HomePageBase.class);
+        homePage.open();
+        Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
+
+        SignInPageBase signInPage = homePage.openSignInPage();
+        Assert.assertTrue(signInPage.isPageOpened(), "Sign in page is not opened");
+
+        homePage = signInPage.signIn();
+        Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
+
+        ProductSearchPageBase iPhoneSearchPage = homePage.searchProduct("iphone 14");
+        Assert.assertTrue(iPhoneSearchPage.isPageOpened(), "Mobile Phone page is not opened");
+
+        ProductPageBase productPage = iPhoneSearchPage.openFirstProductPage();
+        Assert.assertTrue(productPage.isPageOpened(), "Product page is not opened");
+
+    }
 }
 

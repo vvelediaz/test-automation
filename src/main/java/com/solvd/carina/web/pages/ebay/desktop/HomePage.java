@@ -35,6 +35,9 @@ public class HomePage extends HomePageBase {
     @FindBy(xpath = "//a[text()='Account settings']")
     private ExtendedWebElement accountSettingsButton;
 
+    @FindBy(xpath = "//input[@type='submit' and @value='Search']")
+    private ExtendedWebElement searchButton;
+
     public HomePage(WebDriver driver) {
         super(driver);
         setUiLoadedMarker(searchBar);
@@ -67,9 +70,17 @@ public class HomePage extends HomePageBase {
         return initPage(getDriver(), DailyDealsPageBase.class);
     }
 
+    @Override
     public AccountSettingsPageBase openAccountSettingsPage() {
         accountDropDownMenu.hover();
         accountSettingsButton.click();
         return initPage(getDriver(), AccountSettingsPageBase.class);
+    }
+
+    @Override
+    public ProductSearchPageBase searchProduct(String product) {
+        searchBar.type(product);
+        searchButton.click();
+        return initPage(getDriver(), ProductSearchPageBase.class);
     }
 }
