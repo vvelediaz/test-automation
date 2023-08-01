@@ -1,4 +1,4 @@
-package com.solvd.carina.web.components.compare;
+package com.solvd.carina.web.components.gsmarena.compare;
 
 import java.util.HashMap;
 import java.util.Map;

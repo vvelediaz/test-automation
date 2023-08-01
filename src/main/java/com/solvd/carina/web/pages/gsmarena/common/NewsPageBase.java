@@ -1,6 +1,6 @@
 package com.solvd.carina.web.pages.gsmarena.common;
 
-import com.solvd.carina.web.components.NewsItem;
+import com.solvd.carina.web.components.gsmarena.NewsItem;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
 

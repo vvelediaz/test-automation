@@ -1,4 +1,4 @@
-package com.solvd.carina.web.pages.ebay.desktop;
+package com.solvd.carina.web.pages.ebay.ios;
 
 import com.solvd.carina.web.pages.ebay.common.ProductPageBase;
 import com.solvd.carina.web.pages.ebay.common.ProductSearchPageBase;
@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-@DeviceType(pageType = DeviceType.Type.DESKTOP, parentClass = ProductSearchPageBase.class)
+@DeviceType(pageType = DeviceType.Type.IOS_PHONE, parentClass = ProductSearchPageBase.class)
 public class ProductSearchPage extends ProductSearchPageBase {
     @FindBy(xpath = "//li[contains(@class, 's-item') and .//span[@class='s-item__price']]")
     private List<ExtendedWebElement> items;

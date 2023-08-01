@@ -1,4 +1,4 @@
-package com.solvd.carina.web.components;
+package com.solvd.carina.web.components.gsmarena;
 
 import com.solvd.carina.demo.gui.pages.common.ModelInfoPageBase;
 import com.zebrunner.carina.utils.factory.ICustomTypePageFactory;

@@ -1,4 +1,4 @@
-package com.solvd.carina.web.components.compare;
+package com.solvd.carina.web.components.gsmarena.compare;
 
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractUIObject;

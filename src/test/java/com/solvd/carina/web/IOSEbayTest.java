@@ -1,10 +1,5 @@
 package com.solvd.carina.web;
 
-import java.lang.invoke.MethodHandles;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import com.solvd.carina.web.pages.ebay.common.*;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import org.slf4j.Logger;
@@ -12,7 +7,12 @@ import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class EbayTest implements ILogin{
+import java.lang.invoke.MethodHandles;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class IOSEbayTest implements ILoginMobile{
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
     @Test
@@ -22,6 +22,7 @@ public class EbayTest implements ILogin{
         Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
 
         CarAndTruckPartsPageBase carsAndTrucksPage = homePage.openCarsAndTrucksPage();
+        carsAndTrucksPage.open();
         Assert.assertTrue(carsAndTrucksPage.isPageOpened(), "Cars and Trucks page is not opened");
 
         List<String> categoriesString = new ArrayList<>();
@@ -59,7 +60,7 @@ public class EbayTest implements ILogin{
                 .map(ExtendedWebElement::getText)
                 .peek(LOGGER::info)
                 .collect(Collectors.toList());
-        Assert.assertEquals(prices.size(), 48, "Not all prices were acquired");
+        Assert.assertEquals(prices.size(), 24, "Not all prices were acquired");
     }
 
     @Test
@@ -91,7 +92,7 @@ public class EbayTest implements ILogin{
     }
 
     @Test
-    public void signInAndViewMessagesAndMore(){
+    public void signInAndViewMessages(){
         HomePageBase homePage = login();
 
         AccountSettingsPageBase accountSettingsPage = homePage.openAccountSettingsPage();
@@ -117,4 +118,3 @@ public class EbayTest implements ILogin{
 
     }
 }
-

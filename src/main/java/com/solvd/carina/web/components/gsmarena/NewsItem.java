@@ -1,4 +1,4 @@
-package com.solvd.carina.web.components;
+package com.solvd.carina.web.components.gsmarena;
 
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractUIObject;

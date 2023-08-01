@@ -5,7 +5,7 @@ import java.time.Duration;
 import java.util.List;
 
 import com.solvd.carina.demo.gui.pages.desktop.CompareModelsPage;
-import com.solvd.carina.web.components.footer.FooterMenu;
+import com.solvd.carina.web.components.gsmarena.footer.FooterMenu;
 import com.solvd.carina.web.pages.gsmarena.common.AllBrandsPageBase;
 import com.solvd.carina.web.pages.gsmarena.common.BrandModelsPageBase;
 import org.openqa.selenium.WebDriver;

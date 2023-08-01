@@ -1,7 +1,7 @@
 package com.solvd.carina.web.pages.gsmarena.common;
 
 import com.solvd.carina.demo.gui.pages.desktop.CompareModelsPage;
-import com.solvd.carina.web.components.footer.FooterMenuBase;
+import com.solvd.carina.web.components.gsmarena.footer.FooterMenuBase;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.decorator.PageOpeningStrategy;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;

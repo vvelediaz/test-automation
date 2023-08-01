@@ -1,4 +1,4 @@
-package com.solvd.carina.web.components.footer;
+package com.solvd.carina.web.components.gsmarena.footer;
 
 import com.solvd.carina.demo.gui.pages.desktop.CompareModelsPage;
 import com.solvd.carina.demo.gui.pages.desktop.HomePage;

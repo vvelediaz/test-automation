@@ -1,7 +1,7 @@
 package com.solvd.carina.web.pages.gsmarena.desktop;
 
-import com.solvd.carina.web.components.compare.CandidateBlock;
-import com.solvd.carina.web.components.compare.ModelSpecs;
+import com.solvd.carina.web.components.gsmarena.compare.CandidateBlock;
+import com.solvd.carina.web.components.gsmarena.compare.ModelSpecs;
 import com.solvd.carina.web.pages.gsmarena.common.CompareModelsPageBase;
 import com.zebrunner.carina.utils.config.Configuration;
 import com.zebrunner.carina.utils.factory.DeviceType;

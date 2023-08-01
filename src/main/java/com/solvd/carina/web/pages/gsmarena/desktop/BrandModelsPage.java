@@ -1,7 +1,7 @@
 package com.solvd.carina.web.pages.gsmarena.desktop;
 
 import com.solvd.carina.demo.gui.pages.common.ModelInfoPageBase;
-import com.solvd.carina.web.components.ModelItem;
+import com.solvd.carina.web.components.gsmarena.ModelItem;
 import com.solvd.carina.web.pages.gsmarena.common.BrandModelsPageBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import org.openqa.selenium.WebDriver;

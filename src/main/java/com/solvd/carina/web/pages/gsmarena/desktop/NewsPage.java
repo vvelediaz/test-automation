@@ -1,6 +1,6 @@
 package com.solvd.carina.web.pages.gsmarena.desktop;
 
-import com.solvd.carina.web.components.NewsItem;
+import com.solvd.carina.web.components.gsmarena.NewsItem;
 import com.solvd.carina.web.pages.gsmarena.common.NewsPageBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
